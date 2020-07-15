@@ -1,5 +1,19 @@
 import Head from 'next/head'
 
+function HomePage() {
+  return <>
+      <Head>
+        <title>Kiwi</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>Bem vindo ao Kiwi!</div>
+    </>
+}
+
+export default HomePage
+
+/* import Head from 'next/head'
+
 export default function Home() {
   return (
     <div className="container">
@@ -207,3 +221,4 @@ export default function Home() {
     </div>
   )
 }
+ */
