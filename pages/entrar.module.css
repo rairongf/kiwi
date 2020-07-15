@@ -1,0 +1,80 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2ecae;
+}
+
+.title {
+    text-align: center;
+    color: #563429;
+    font-weight: 600;
+    font-size: 7vh;
+    margin-bottom: 5vh;
+}
+
+.title span {
+    color: #61ab5a;
+}
+
+.form {
+    font-size: 3vh;
+    min-width: 15em;
+    border-radius: 27px;
+    background-color: #563429;
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    color: #a9c77e;
+    box-shadow: 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.form .user, .password {
+    padding: 0.8em 0 0.8em 0;
+    display: grid;
+    grid-template-rows: repeat(1, 2);
+    font-weight: 600;
+}
+
+.form .buttons {
+    padding: 1.2em 0 0.8em 0;
+    display: grid;
+    grid-template-columns: 50% 40%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form .buttons button {
+    text-align: center;
+    padding: 1em 0.5em 1em 0.5em;
+    background-color: #61ab5a;
+    outline: 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 3vh;
+    color: #f2ecae;
+}
+
+.form .buttons button:hover {
+    transform: translateY(-3px);
+}
+
+.form div input {
+    margin-top: 8px;
+    outline: 0;
+    border: 0;
+    min-height: 5vh;
+    border-radius: 5px;
+    font-size: 3vh;
+}
+
+.form div input:hover {
+    transform: translateY(-1px);
+}
+
+.logo {
+    height: 1.7em;
+}
