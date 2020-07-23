@@ -6,6 +6,10 @@ const kiwi = {
     white: '#f2ecae',
 }
 
+const boxShadow = {
+    black: rgba(0, 0, 0, 0.15),
+}
+
 const tech = {
     lighterBlue: '#d4f0fc',
     lightMediumBlue: '#89d6fb',

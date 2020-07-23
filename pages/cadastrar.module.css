@@ -1,0 +1,129 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(169, 199, 126, 0.65);
+}
+
+.title {
+    text-align: center;
+    color: #563429;
+    font-weight: 600;
+    font-size: 7vh;
+    margin-bottom: 5vh;
+}
+
+.form {
+    max-width: 90vw;
+    margin: 0;
+    font-size: 3.5vh;
+    min-width: 15em;
+    border-radius: 27px;
+    background-color: #a9c77e;
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    color: #563429;
+    box-shadow: 6px 10px #b89a61;
+    font-weight: 600;
+}
+
+.form .user {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr 1fr 1fr);
+}
+
+.form .password {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr 1fr 1fr);
+}
+
+.form .email{
+    display: grid;
+    grid-template-rows: repeat(1, 1fr 1fr);
+}
+
+.form .localizacao {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr 1fr 1fr);
+}
+
+.form .localizacao input {
+    width: 100%;
+}
+
+.form .bairroNumero{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 4em 1fr);
+    
+}
+
+.form div {
+    padding: 0;
+    margin: 0.8em 0 0.8em 0;
+}
+
+.form div input {
+    max-width: 100%;
+    padding: 0 0 0 9px;
+    margin-top: 8px;
+    outline: 0;
+    min-height: 5vh;
+    border-radius: 5px;
+    font-size: 2.5vh;
+    size: inherit;
+    background-color: #f2ecae;
+    border: solid 2px #61ab5a;
+    color: #563429;
+    font-weight: 600;
+}
+
+.form div input::placeholder {
+    font-size: 2vh;
+    opacity: 0.75;
+}
+
+.form div input:focus {
+    background-color: #01303f;
+    border: solid 3px #02577a;
+    color: #d4f0fc;
+}
+
+.form .buttons {
+    margin: 1.2em 0 0.8em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form .buttons button {
+    min-width: fit-content;
+    text-align: center;
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    margin-left: 0.4em;
+    outline: 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 3vh;
+    color: #f2ecae;
+}
+
+.form .buttons button[name=voltar] {
+    background-color: #563429;
+}
+
+.form .buttons button[name=confirmar] {
+    background-color: #61ab5a;
+}
+
+.form .buttons button:hover {
+    transform: translateY(-3px);
+    background-color: #01303f;
+}
+
