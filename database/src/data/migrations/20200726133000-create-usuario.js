@@ -35,8 +35,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      estabelecimento_idEstabelecimento: {
+      estabelecimento_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'establishments',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       created_at: {
         type: Sequelize.DATE,
