@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('establishments', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -13,13 +13,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      email: {
+      descricao: {
         type: Sequelize.STRING,
-        primaryKey: true,
         allowNull: false
       },
-      senha: {
-        type: Sequelize.STRING,
+      lotacao_maxima: {
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       data_cadastro: {
@@ -27,16 +26,9 @@ module.exports = {
         allowNull: false,
         defaultValue: new Date()
       },
-      hora_fila: {
-        type: Sequelize.TIME,
-        allowNull: true,
-      },
       endereco: {
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      estabelecimento_idEstabelecimento: {
-        type: Sequelize.INTEGER,
+        allowNull: false
       },
       created_at: {
         type: Sequelize.DATE,
@@ -46,12 +38,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       }
-
     });
-
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('users');
+    return queryInterface.dropTable('establishments');
   }
 };
