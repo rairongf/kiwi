@@ -6,6 +6,10 @@ const kiwi = {
     white: '#f2ecae',
 }
 
+const backgrounds = {
+    one: rgba(169, 199, 126, 0.65)
+}
+
 const boxShadow = {
     black: rgba(0, 0, 0, 0.15),
 }

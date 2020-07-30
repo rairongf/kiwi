@@ -20,12 +20,13 @@
     max-width: 90vw;
     margin: 0;
     font-size: 3.5vh;
-    min-width: 15em;
+    width: 17em;
     border-radius: 27px;
     background-color: #a9c77e;
     padding: 0.6em 1.2em 0.6em 1.2em;
     color: #563429;
     box-shadow: 6px 10px #b89a61;
+    border: 0;
     font-weight: 600;
 }
 
@@ -88,7 +89,6 @@
 
 .form div input:focus {
     background-color: #01303f;
-    border: solid 3px #02577a;
     color: #d4f0fc;
 }
 

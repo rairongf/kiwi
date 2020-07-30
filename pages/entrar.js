@@ -2,36 +2,79 @@ import Head from 'next/head'
 import { useState } from 'react'
 import styles from './entrar.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function Entrar() {
+  const router = useRouter()
   const [login, setLogin] = useState('')
   const [senha, setSenha] = useState('')
 
+  function isLoginValido(){
+    // função que irá verificar se o login digitado existe no banco
+    if(login == 'rairon'){
+      return true
+    }
+    else return false
+  }
+
+  function isSenhaValida(){
+    // função que irá verificar se a senha digitada condiz com a senha
+    // cadastrada no banco para o login
+    
+    if(senha == '123456' && login == 'rairon'){
+      return true
+    }
+    else return false
+
+  }
+
+  function isCamposPreenchidos(){
+      if(login == '' || senha == ''){
+        return false
+      }
+      else {
+        return true
+      }
+  }
+
   function handleSubmit(e){
     e.preventDefault()
-    var dadosIncorretos = false;
+    var loginValido
+    var senhaValida
+    var camposPreenchidos
+    
+    camposPreenchidos = isCamposPreenchidos()
 
-    window.alert(`Login: ${login}\nSenha: ${senha}`)
-    if(login != 'rairon' || senha != '123456'){
-      dadosIncorretos = true;
-    }
-
-    if(dadosIncorretos){
-      document.getElementById("labelLogin").innerHTML = "Usuário ou email - !"
-      document.getElementById("labelLogin").style.color = "red"
-      document.getElementById("inputLogin").style.borderColor = "red"
+    if(camposPreenchidos){
+      loginValido = isLoginValido()
+      if(!loginValido){
+        document.getElementById("inputLogin").style.borderColor = "red"
+        window.alert(`O login @${login} não está cadastrado.\nPor favor, realize o cadastro ou digite novamente.`)
+      }
+      else {
+        document.getElementById("inputLogin").style.borderColor = "#61ab5a"
+        senhaValida = isSenhaValida()
+  
+        if(!senhaValida){
+          document.getElementById("inputSenha").style.borderColor = "red"
+          window.alert(`A senha digitada está incorreta.\nPor favor, digite novamente.`)
+        }
+        else {
+          document.getElementById("inputSenha").style.borderColor = "#61ab5a"
+          window.alert(`Login realizado com sucesso.\nSeja bem vindo!`)
+          router.push('/dashboard')
+        }
+        
+      }
     }
     else {
-      document.getElementById("labelLogin").innerHTML = "Usuário ou email"
-      document.getElementById("labelLogin").style.color = "#563429"
-      document.getElementById("inputLogin").style.borderColor = "#61ab5a"
+      window.alert(`Parece que você esqueceu de preencher alguma coisa.`)
     }
-    
   }
 
   return <div className={styles.container}>
       <Head>
-        <title>Entrar - Kiwi</title>
+        <title>Bem vindo - Kiwi</title>
       </Head>
 
       <main>
@@ -47,7 +90,7 @@ function Entrar() {
               <input id="inputSenha" type="password" value={senha} onChange={e => setSenha(e.target.value)}></input>
             </div>
             <div className={styles.buttons}>
-              <Link href="/cadastrar">
+              <Link href="/cadastro">
                 <button type="button" name="cadastrar">Cadastrar</button>
               </Link>
               <button type="submit" name="entrar">Entrar</button>
@@ -56,16 +99,6 @@ function Entrar() {
         </div>
       </main>
 
-      <footer>
-        <a
-          href="https://github.com/rairongf/kiwi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Kiwi Github {' '}
-          <img src="/kiwi.svg" alt="Kiwi Logo"/>
-        </a>
-      </footer>
     </div>
 }
 
