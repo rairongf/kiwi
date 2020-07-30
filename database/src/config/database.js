@@ -3,7 +3,7 @@ module.exports = {
     host: "localhost",
     username: "root",
     password: "gustavo16",
-    database: "sqlnode",
+    database: "kiwi_database",
     define: {
         timestamps: true,
         underscored: true,

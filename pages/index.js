@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Entrar from './entrar'
 
-export default function Index(){
+export default function Index() {
   return <>
     <Head>
       <meta charSet='utf-8' />
@@ -11,9 +11,11 @@ export default function Index(){
       <meta name='keywords' content='Keywords' />
 
       <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content="#61ab5a"/>
+      <meta name="theme-color" content="#61ab5a" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Entrar />
   </>
+
+
 }
