@@ -43,7 +43,7 @@ export default function Dashboard(){
                 padding: 0 9px 0 9px;
                 height: 100%;
                 outline: 0;
-                border: solid 2px #f2ecae;
+                border: 0;
                 background-color: #563429;
                 cursor: pointer;
                 color: #f2ecae;
@@ -51,9 +51,9 @@ export default function Dashboard(){
                 align-items: center;
                 justify-content: center;
             }
-            header button:hover {
+            /*header button:hover {
                 border-bottom: solid 2px #f2ecae;
-            }
+            }*/
             main {
                 border: 0;
             }
