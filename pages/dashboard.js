@@ -14,7 +14,7 @@ export default function Dashboard(){
                     <button>Seguindo</button>
                 </div>
                 <div>
-                    <button>Sair</button>
+                    <button><ExitToAppOutlinedIcon /></button>
                 </div>
             </header>
 
@@ -43,11 +43,13 @@ export default function Dashboard(){
                 padding: 0 9px 0 9px;
                 height: 100%;
                 outline: 0;
-                border: 0;
+                border: solid 2px #f2ecae;
                 background-color: #563429;
                 cursor: pointer;
                 color: #f2ecae;
                 font-size: 2.75vh;
+                align-items: center;
+                justify-content: center;
             }
             header button:hover {
                 border-bottom: solid 2px #f2ecae;
