@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const now = new Date();
+
 module.exports = {
     async index(req, res) {
         const users = await User.findAll();

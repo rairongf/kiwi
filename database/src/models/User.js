@@ -8,7 +8,10 @@ class User extends Model {
             senha: DataTypes.STRING,
             dataCadastro: DataTypes.DATE,
             horaFila: DataTypes.TIME,
-            endereco: DataTypes.STRING,
+            cidade: DataTypes.STRING,
+            bairro: DataTypes.STRING,
+            rua: DataTypes.STRING,
+            numero: DataTypes.STRING,
         }, {
             sequelize: connection,
         })
@@ -21,8 +24,8 @@ class User extends Model {
         });
         this.belongsToMany(models.Establishment, {
             foreignKey: 'usuario_id',
-            through: 'usuario_segue_estabelecimento',
-            as: 'establishments'
+            through: 'user_follows_establishment',
+            as: 'establishments_users'
         });
     }
 }

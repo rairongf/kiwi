@@ -7,7 +7,10 @@ class Establishment extends Model {
             descricao: DataTypes.STRING,
             lotacao_maxima: DataTypes.INTEGER,
             dataCadastro: DataTypes.DATE,
-            endereco: DataTypes.STRING,
+            cidade: DataTypes.STRING,
+            bairro: DataTypes.STRING,
+            rua: DataTypes.STRING,
+            numero: DataTypes.STRING,
         }, {
             sequelize: connection,
         })
@@ -21,7 +24,7 @@ class Establishment extends Model {
         this.belongsToMany(models.Establishment, {
             foreignKey: 'estabelecimento_id',
             through: 'user_follows_establishment',
-            as: 'users'
+            as: 'users_establishment'
         });
     }
 }
