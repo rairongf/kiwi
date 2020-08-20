@@ -81,6 +81,8 @@ export default function Cadastrar() {
                     })
                 });
 
+                window.alert(response)
+
                 window.alert(`Cadastro realizado!`)
 
                 router.push('/')
