@@ -67,7 +67,7 @@
 }
 
 .form .buttons button:hover {
-    transform: translateY(-3px);
+    /*transform: translateY(-3px);*/
     background-color: #01303f;
 }
 
