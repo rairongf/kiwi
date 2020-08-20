@@ -1,10 +1,266 @@
-.container {
-    min-height: 100vh;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(169, 199, 126, 0.65);
+#page_dashboard {
+  height: 76vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
+
+#page_dashboard #page_dashboard_content {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+
+#page_dashboard #page_dashboard_content section {
+  width: 100%;
+  padding: 1.4rem;
+  border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
+
+  background: var(--color-kiwi-dark-green);
+  color: var(--color-kiwi-dark-brown);
+}
+
+#page_dashboard #page_dashboard_content section > h2 {
+  margin-bottom: 0.8rem;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .establishment {
+  background: var(--color-kiwi-dark-brown);
+  color: var(--color-kiwi-lighter-brown);
+  border-radius: 1.4rem 1.4rem 0 0;
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  grid-template-rows: 5.5rem 5.5rem;
+  grid-template-areas: 
+    "img name"
+    "img address"
+  ;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .establishment img {
+  grid-area: img;
+  border-radius: 1.4rem;
+  height: 9rem;
+  width: 9rem;
+  margin: 1rem 1.2rem;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .establishment h3 {
+  grid-area: name;
+  align-self: center;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .establishment p {
+  grid-area: address;
+  align-self: center;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .fila_positions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 11rem;
+  background: var(--color-kiwi-lighter-brown);
+  color: var(--color-kiwi-dark-brown);
+  border-radius: 0 0 1.4rem 1.4rem;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .fila_positions span {
+  color: var(--color-kiwi-dark-green);
+}
+
+#page_dashboard #page_dashboard_content .filas_container .fila_positions h1 {
+  font-size: 5.5rem;
+  line-height: 4rem;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .fila_positions .fila_presencial {
+  width: 50%;
+  padding: 0.5rem 1.2rem;
+  border-right: 1px solid var(--color-kiwi-dark-brown);
+}
+
+#page_dashboard #page_dashboard_content .filas_container .fila_positions .fila_kiwi {
+  width: 50%;
+  padding: 0.5rem 1.2rem;
+}
+
+.scrollable_containers {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  column-gap: 0.6rem;
+  width: 100%;
+}
+
+.scrollable_containers ::-webkit-scrollbar {
+  width: 4px;
+}
+
+#page_dashboard #page_dashboard_content .seguindo_container {
+  padding-bottom: 0 !important;
+  width: 15rem;
+}
+
+#page_dashboard #page_dashboard_content .seguindo_container button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border: 0;
+  width: 100%;
+}
+
+#page_dashboard #page_dashboard_content .seguindo_container button svg {
+  font-size: 4rem;
+  color: var(--color-kiwi-dark-brown);
+}
+
+#page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  height: 43rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list img {
+  height: 10rem; /* 9,6px = 1rem | 1vh = 0.01 * viewport height */
+  width: 10rem;
+  min-width: 10rem; /* 15 * 9,6px = 144px | 1vw = 0.01 * viewport width */
+  border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
+}
+
+#page_dashboard #page_dashboard_content .explore_container {
+  padding-bottom: 0 !important;
+  width: 26rem;
+}
+
+#page_dashboard #page_dashboard_content .explore_container button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border: 0;
+  width: 100%;
+}
+
+#page_dashboard #page_dashboard_content .explore_container button svg {
+  font-size: 4rem;
+  color: var(--color-kiwi-dark-brown);
+}
+
+#page_dashboard #page_dashboard_content .explore_container .recommended_establishment_list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  height: 43rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@media (min-width: 950px) {
+  #page_dashboard {
+    width: 100%;
+    padding: 1.4rem 0;
+    margin: 0;
+  }
+
+  #page_dashboard #page_dashboard_content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "fila mapa infos"
+      "scrollable scrollable scrollable"
+    ;
+    row-gap: 0.8rem;
+  }
+
+  #page_dashboard #page_dashboard_content section {
+    width: 32vw;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container {
+    grid-area: fila;
+    height: 100%;
+  }
+
+  #page_dashboard #page_dashboard_content .map_container {
+    grid-area: mapa;
+    height: 100%;
+  }
+
+  #page_dashboard #page_dashboard_content .fila_infos_container {
+    grid-area: infos;
+    height: 100%;
+  }
+
+  .scrollable_containers {
+    grid-area: scrollable;
+    column-gap: 0.8rem;
+  }
+
+  #page_dashboard #page_dashboard_content .explore_container {
+    width: 32vw;
+  }
+
+  #page_dashboard #page_dashboard_content .explore_container .recommended_establishment_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    column-gap: 0.8rem;
+    width: 100%;
+    height: 13rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .recommended_establishment_list div {
+    height: 10rem;
+  }
+
+  #page_dashboard #page_dashboard_content .seguindo_container {
+    width: calc(64vw + 0.8rem);
+  }
+
+  #page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    column-gap: 0.8rem;
+    width: 100%;
+    height: 13rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  #page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list img {
+    height: 10rem; /* 9,6px = 1rem | 1vh = 0.01 * viewport height */
+    width: 10rem; /* 15 * 9,6px = 144px | 1vw = 0.01 * viewport width */
+    border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
+  }
+
+}
+
+
 
