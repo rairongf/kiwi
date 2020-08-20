@@ -26,9 +26,22 @@ module.exports = {
         allowNull: false,
         defaultValue: new Date()
       },
-      endereco: {
+      cidade: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'penelope'
+      },
+      bairro: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      rua: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      numero: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,

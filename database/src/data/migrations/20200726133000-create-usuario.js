@@ -11,7 +11,8 @@ module.exports = {
       },
       nome: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'robson'
       },
       email: {
         type: Sequelize.STRING,
@@ -31,7 +32,20 @@ module.exports = {
         type: Sequelize.TIME,
         allowNull: true,
       },
-      endereco: {
+      cidade: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: 'charmosa'
+      },
+      bairro: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      rua: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      numero: {
         type: Sequelize.STRING,
         allowNull: false,
       },

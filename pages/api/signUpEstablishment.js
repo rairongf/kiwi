@@ -3,6 +3,8 @@ const Establishment = require('../../database/src/models/Establishment');
 require('../../database/src/data/index');
 
 const cadastroEstabelecimento = async (req, res) => {
+    
+
     const { nome,
         descricao,
         lotacao_maxima,
