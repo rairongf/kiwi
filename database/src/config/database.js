@@ -2,7 +2,7 @@ module.exports = {
     dialect: "mysql",
     host: "localhost",
     username: "root",
-    password: "gustavo16",
+    password: "root",
     database: "kiwi_database",
     define: {
         timestamps: true,

@@ -81,11 +81,13 @@ export default function Cadastrar() {
                     })
                 });
 
-                window.alert(response)
-
-                window.alert(`Cadastro realizado!`)
-
-                router.push('/')
+                
+                if(response.ok){
+                    window.alert(`Cadastro realizado!`)
+                    router.push('/')
+                }else {
+                    console.log(response)
+                }
             }
             else {
                 window.alert(`Senhas não conferem.\nPor favor, digite novamente.`)
