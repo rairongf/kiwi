@@ -9,6 +9,17 @@ function Entrar() {
   const [login, setLogin] = useState('')
   const [senha, setSenha] = useState('')
 
+  var loginRet = '';
+  var senhaRet = '';
+
+  function setLoginRet(value) {
+    loginRet = value;
+  }
+
+  function setSenhaRet(value) {
+    senhaRet = value;
+  }
+
   /*function isLoginValido(){
     // função que irá verificar se o login digitado existe no banco
     if(login == 'rairon'){
@@ -26,25 +37,47 @@ function Entrar() {
     }
     else return false
 
-  }
-  */
+  }*/
+
 
   async function validaLogin(email) {
-    const response = await fetch('/api/validateLogin', {
-      method: 'POST',
-      headers: {
-        //type of data
-        'Content-Type': 'application/json'
-      },
-      //data to be posted on server
-      body: JSON.stringify({
-        email: email
-      })
-    });
 
-    const responseJson = response.json();
+    try {
+      const response = await fetch('/api/validateLogin', {
+        method: 'POST',
+        headers: {
+          //type of data
+          'Content-Type': 'application/json'
+        },
+        //data to be posted on server
+        body: JSON.stringify({
+          email: email
+        })
+      });
 
-    console.log(responseJson)
+      const data = await response.json();
+
+      console.log('inicio');
+      console.log(data.email)
+      console.log('fim');
+
+      if (data.email != login) {
+        document.getElementById("inputLogin").style.borderColor = "red"
+        window.alert(`O login @${login} não está cadastrado.\nPor favor, realize o cadastro ou digite novamente.`)
+      } else {
+        document.getElementById("inputLogin").style.borderColor = "#61ab5a"
+        if (data.senha != senha) {
+          document.getElementById("inputSenha").style.borderColor = "red"
+          window.alert(`A senha digitada está incorreta.\nPor favor, digite novamente.`)
+        } else {
+          document.getElementById("inputSenha").style.borderColor = "#61ab5a"
+          window.alert(`Login realizado com sucesso.\nSeja bem vindo!`)
+          router.push('/dashboard')
+        }
+      }
+    } catch (e) {
+      console.error(e)
+    }
   }
 
   function isCamposPreenchidos() {
@@ -56,7 +89,7 @@ function Entrar() {
     }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
 
     var camposPreenchidos
@@ -64,7 +97,7 @@ function Entrar() {
     camposPreenchidos = isCamposPreenchidos()
 
     if (camposPreenchidos) {
-      validaLogin(login)
+      await validaLogin(login);
     }
     else {
       window.alert(`Parece que você esqueceu de preencher alguma coisa.`)
