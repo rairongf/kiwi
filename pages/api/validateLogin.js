@@ -6,14 +6,17 @@ require('../../database/src/data/index');
 const validate = async (req, res) => {
     const { email } = req.body;
 
-    const ans = await User.findOne({ where: {email}});
+    const user = await User.findOne({
+        where: { email }
+    }).then((instance) =>{
+        return instance.get();
+    }).then((data) => {
+        return data;
+    }).catch(err => {
+        return err;
+    });
 
-    const ansRet = {
-        login: ans.email,
-        senha: ans.senha
-    }
-
-    return res.json(ansRet);
+    return res.json(user);
 }
 
 export default validate;
