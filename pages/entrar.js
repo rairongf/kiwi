@@ -9,46 +9,26 @@ function Entrar() {
   const [login, setLogin] = useState('')
   const [senha, setSenha] = useState('')
 
-  /*function isLoginValido(){
-    // função que irá verificar se o login digitado existe no banco
-    if(login == 'rairon'){
-      return true
-    }
-    else return false
-  }
-
-  function isSenhaValida(){
-    // função que irá verificar se a senha digitada condiz com a senha
-    // cadastrada no banco para o login
-    
-    if(senha == '123456' && login == 'rairon'){
-      return true
-    }
-    else return false
-
-  }
-  */
-
-  async function validaLogin(email) {
-    const response = await fetch('/api/validateLogin', {
+  async function validaLogin() {
+    const response = await fetch(`http://localhost:3000/api/users/${login}`, {
       method: 'POST',
-      headers: {
-        //type of data
-        'Content-Type': 'application/json'
-      },
-      //data to be posted on server
-      body: JSON.stringify({
-        email: email
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({senha})
     });
 
-    const responseJson = response.json();
-
-    console.log(responseJson)
+    response.json().then( json => {
+      if(response.ok){
+        alert(json.success)
+        router.push('/dashboard')
+      }
+      else {
+        alert(json.error)
+      }
+    })
   }
 
   function isCamposPreenchidos() {
-    if (login.trim() == '' || senha.trim() == '') {
+    if (login == '' || senha == '') {
       return false
     }
     else {
@@ -64,7 +44,7 @@ function Entrar() {
     camposPreenchidos = isCamposPreenchidos()
 
     if (camposPreenchidos) {
-      validaLogin(login)
+      validaLogin()
     }
     else {
       window.alert(`Parece que você esqueceu de preencher alguma coisa.`)
@@ -82,11 +62,15 @@ function Entrar() {
         <form onSubmit={handleSubmit}>
           <div className={styles.user}>
             <label id="labelLogin">Usuário ou email</label>
-            <input id="inputLogin" type="text" value={login} onChange={e => setLogin(e.target.value)}></input>
+            <input id="inputLogin" type="text" value={login} 
+                  onChange={e => setLogin(e.target.value)}
+            ></input>
           </div>
           <div className={styles.password}>
             <label id="labelSenha">Senha</label>
-            <input id="inputSenha" type="password" value={senha} onChange={e => setSenha(e.target.value)}></input>
+            <input id="inputSenha" type="password" value={senha} 
+                  onChange={e => setSenha(e.target.value)}
+            ></input>
           </div>
           <div className={styles.buttons}>
             <Link href="/cadastro">
