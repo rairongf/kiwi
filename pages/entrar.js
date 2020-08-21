@@ -20,26 +20,6 @@ function Entrar() {
     senhaRet = value;
   }
 
-  /*function isLoginValido(){
-    // função que irá verificar se o login digitado existe no banco
-    if(login == 'rairon'){
-      return true
-    }
-    else return false
-  }
-
-  function isSenhaValida(){
-    // função que irá verificar se a senha digitada condiz com a senha
-    // cadastrada no banco para o login
-    
-    if(senha == '123456' && login == 'rairon'){
-      return true
-    }
-    else return false
-
-  }*/
-
-
   async function validaLogin(email) {
 
     try {
@@ -56,10 +36,6 @@ function Entrar() {
       });
 
       const data = await response.json();
-
-      console.log('inicio');
-      console.log(data.email)
-      console.log('fim');
 
       if (data.email != login) {
         document.getElementById("inputLogin").style.borderColor = "red"
