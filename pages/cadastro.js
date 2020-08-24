@@ -56,7 +56,7 @@ export default function Cadastrar() {
         if (camposPreenchidos) {
             var estaValidado = confereSenhas()
             if (estaValidado) {
-                const response = await fetch('/api/signUpUser', {
+                const response = await fetch('/api/users/signUpUser', {
                     method: 'POST',
                     headers: {
                         //type of data

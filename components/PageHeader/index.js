@@ -24,8 +24,10 @@ function PageHeader(){
           </div>
         </div>
         <div className={styles.text_container}>
-          <h2>Visite a página do estabelecimento</h2>
-          <p>Entre na fila e aguarde <span>em casa</span></p>
+          <div className={styles.text_flex}>
+            <h2>Visite a página do estabelecimento</h2>
+            <p>Entre na fila e aguarde <span>em casa</span></p>
+          </div>
         </div>
       </header>
     </div>

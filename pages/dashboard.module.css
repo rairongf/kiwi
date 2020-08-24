@@ -20,6 +20,7 @@
 
 #page_dashboard #page_dashboard_content section {
   width: 100%;
+  height: 100%;
   padding: 1.4rem;
   border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
 
@@ -28,6 +29,7 @@
 }
 
 #page_dashboard #page_dashboard_content section > h2 {
+  font-size: 8vw;
   margin-bottom: 0.8rem;
 }
 
@@ -36,20 +38,21 @@
   color: var(--color-kiwi-lighter-brown);
   border-radius: 1.4rem 1.4rem 0 0;
   display: grid;
-  grid-template-columns: 12rem 1fr;
-  grid-template-rows: 5.5rem 5.5rem;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 50% 50%;
   grid-template-areas: 
     "img name"
     "img address"
   ;
+  height: 42%;
+  padding: 4%;
 }
 
 #page_dashboard #page_dashboard_content .filas_container .establishment img {
   grid-area: img;
   border-radius: 1.4rem;
-  height: 9rem;
-  width: 9rem;
-  margin: 1rem 1.2rem;
+  height: 10vh;
+  width: 10vh;
 }
 
 #page_dashboard #page_dashboard_content .filas_container .establishment h3 {
@@ -68,19 +71,29 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 11rem;
+  height: 47%;
   background: var(--color-kiwi-lighter-brown);
   color: var(--color-kiwi-dark-brown);
   border-radius: 0 0 1.4rem 1.4rem;
+}
+
+#page_dashboard #page_dashboard_content .filas_container .fila_positions h4,
+#page_dashboard #page_dashboard_content .filas_container .fila_positions h4 span {
+  font-size: 4vw;
 }
 
 #page_dashboard #page_dashboard_content .filas_container .fila_positions span {
   color: var(--color-kiwi-dark-green);
 }
 
+#page_dashboard #page_dashboard_content .filas_container .fila_positions h2 {
+  font-size: 6vw;
+  line-height: 6vw;
+}
+
 #page_dashboard #page_dashboard_content .filas_container .fila_positions h1 {
-  font-size: 5.5rem;
-  line-height: 4rem;
+  font-size: 15vw;
+  line-height: 12vw;
 }
 
 #page_dashboard #page_dashboard_content .filas_container .fila_positions .fila_presencial {
@@ -94,22 +107,27 @@
   padding: 0.5rem 1.2rem;
 }
 
+#page_dashboard #page_dashboard_content .map_container .mapa {
+  background-color: var(--color-kiwi-lighter-brown);
+  border-radius: 1.4rem;
+  color: var(--color-kiwi-lighter-brown);
+}
+
 .scrollable_containers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;  
   align-items: flex-start;
   justify-content: flex-start;
-  column-gap: 0.6rem;
+  row-gap: 0.6rem;
   width: 100%;
 }
 
 .scrollable_containers ::-webkit-scrollbar {
-  width: 4px;
+  height: 7px;
 }
 
 #page_dashboard #page_dashboard_content .seguindo_container {
-  padding-bottom: 0 !important;
-  width: 15rem;
+  width: 100%;
 }
 
 #page_dashboard #page_dashboard_content .seguindo_container button {
@@ -129,23 +147,21 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
-  row-gap: 0.8rem;
-  height: 43rem;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  flex-direction: row;
+  column-gap: 0.3rem;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 #page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list img {
-  height: 10rem; /* 9,6px = 1rem | 1vh = 0.01 * viewport height */
-  width: 10rem;
-  min-width: 10rem; /* 15 * 9,6px = 144px | 1vw = 0.01 * viewport width */
+  height: 5rem; /* 9,6px = 1rem | 1vh = 0.01 * viewport height */
+  width: 5rem;
+  margin-bottom: .3rem;
   border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
 }
 
 #page_dashboard #page_dashboard_content .explore_container {
-  padding-bottom: 0 !important;
-  width: 26rem;
 }
 
 #page_dashboard #page_dashboard_content .explore_container button {
@@ -165,17 +181,21 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
-  row-gap: 0.8rem;
-  height: 43rem;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  flex-direction: row;
+  column-gap: 0.3rem;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#page_dashboard #page_dashboard_content .explore_container .recommended_establishment_list div {
+  margin-bottom: .3rem;
 }
 
 @media (min-width: 950px) {
   #page_dashboard {
     width: 100%;
-    padding: 1.4rem 0;
+    padding: 1.4rem;
     margin: 0;
   }
 
@@ -185,61 +205,84 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 72vh 1fr;
+    grid-template-columns: 3fr 3fr 2fr;
     grid-template-areas: 
       "fila mapa infos"
       "scrollable scrollable scrollable"
     ;
-    row-gap: 0.8rem;
+    row-gap: 1.2rem;
   }
 
-  #page_dashboard #page_dashboard_content section {
-    width: 32vw;
+  #page_dashboard #page_dashboard_content section > h2 {
+    font-size: 2.5vw;
   }
 
   #page_dashboard #page_dashboard_content .filas_container {
     grid-area: fila;
     height: 100%;
+    width: 36vw;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container .establishment {
+    padding: 3%;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container .establishment h3 {
+    font-size: 2vw;
+    margin-left: 2vh;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container .establishment p {
+    font-size: 1.1vw;
+    margin-left: 2vh;
+  }
+  
+  #page_dashboard #page_dashboard_content .filas_container .establishment img {
+    height: 24vh;
+    width: 24vh;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container .fila_positions h4,
+  #page_dashboard #page_dashboard_content .filas_container .fila_positions h4 span {
+    font-size: 2vw;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container .fila_positions h2 {
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+
+  #page_dashboard #page_dashboard_content .filas_container .fila_positions h1 {
+    font-size: 7.5vw;
+    line-height: 6.5vw;
   }
 
   #page_dashboard #page_dashboard_content .map_container {
     grid-area: mapa;
     height: 100%;
+    width: 36vw;
   }
 
   #page_dashboard #page_dashboard_content .fila_infos_container {
     grid-area: infos;
     height: 100%;
+    width: 24vw;
   }
 
   .scrollable_containers {
     grid-area: scrollable;
-    column-gap: 0.8rem;
-  }
-
-  #page_dashboard #page_dashboard_content .explore_container {
-    width: 32vw;
-  }
-
-  #page_dashboard #page_dashboard_content .explore_container .recommended_establishment_list {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: row;
     column-gap: 0.8rem;
-    width: 100%;
-    height: 13rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-
-  .recommended_establishment_list div {
-    height: 10rem;
+    margin-bottom: 1.4rem;
   }
 
   #page_dashboard #page_dashboard_content .seguindo_container {
-    width: calc(64vw + 0.8rem);
+    width: 36vw;
+    height: 100%;
   }
 
   #page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list {
@@ -247,17 +290,26 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: row;
-    column-gap: 0.8rem;
+    column-gap: 0.4rem;
     width: 100%;
-    height: 13rem;
     overflow-x: scroll;
     overflow-y: hidden;
   }
 
-  #page_dashboard #page_dashboard_content .seguindo_container .following_establishments_list img {
-    height: 10rem; /* 9,6px = 1rem | 1vh = 0.01 * viewport height */
-    width: 10rem; /* 15 * 9,6px = 144px | 1vw = 0.01 * viewport width */
-    border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
+  #page_dashboard #page_dashboard_content .explore_container {
+    width: calc(60vw + 0.8rem);
+    height: 100%;
+  }
+
+  #page_dashboard #page_dashboard_content .explore_container .recommended_establishment_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 
 }

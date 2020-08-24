@@ -40,6 +40,9 @@ export default function Dashboard(){
                 </section>
                 <section className={styles.map_container}>
                     <h2>Mapa</h2>
+                    <div className={styles.mapa}>
+                      -
+                    </div>
                 </section>
                 <section className={styles.fila_infos_container}>
                     <h2>Infos</h2>
@@ -89,7 +92,6 @@ export default function Dashboard(){
                                 alt="Supermercado Unissul Avenida"
                             />
                         </div>
-                        <button><ExpandMoreIcon fontSize="large"/></button>
                     </section>
                     <section className={styles.explore_container}>
                         <h2>Explore</h2>
@@ -101,7 +103,6 @@ export default function Dashboard(){
                             <EstablishmentCard />
                             <EstablishmentCard />
                         </div>
-                        <button><ExpandMoreIcon fontSize="large"/></button>
                     </section>
                 </div>
             </div>

@@ -1,7 +1,8 @@
-const User = require('../../database/src/models/User');
-const now = new Date();
+const User = require('../../../database/src/models/User');
 
-require('../../database/src/data/index');
+require('../../../database/src/data/index');
+
+const now = new Date();
 
 const cadastro = async (req, res) => {
     const { nome,

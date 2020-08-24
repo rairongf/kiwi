@@ -1,6 +1,6 @@
-const Establishment = require('../../database/src/models/Establishment');
+const Establishment = require('../../../database/src/models/Establishment');
 
-require('../../database/src/data/index');
+require('../../../database/src/data/index');
 
 const cadastroEstabelecimento = async (req, res) => {
     
