@@ -16,4 +16,23 @@ Acesse [http://localhost:3000](http://localhost:3000) com o seu navegador para v
 
 Você pode começar a editar os arquivos em `/pages/`. A página atualiza automaticamente a medida que você edita.
 
+## Recursos
+
+- [X] Cadastro de usuário
+- [X] Cadastro de estabelecimento
+- [X] Listagem de estabelecimentos de cada cidade
+- [X] Listagem de cada estabelecimento em sua página única
+- [ ] Retirada de senhas
+- [ ] Devolução de senhas
+
+## Tecnologias utilizadas
+
+- [X] Javascript | HMTL | CSS
+- [X] NextJS | ReactJS
+- [X] NodeJS | Express
+- [X] MySQL | Sequelize
+- [ ] Geolocalização
+- [ ] Maps Javascript API
+- [ ] Notificações push
+
 
